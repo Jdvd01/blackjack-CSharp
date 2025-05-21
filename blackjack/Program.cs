@@ -16,21 +16,19 @@ while (true)
     switch (switchControl)
     {
         case "menu":
-            Console.WriteLine("");
-            Console.WriteLine("Welcome to the C A S I N O!");
+            Console.WriteLine("\n" + "Welcome to the C A S I N O!");
             Console.WriteLine("Write '21' to play 21");
             switchControl = Console.ReadLine();
             break;
 
         case "21":
             Console.WriteLine("Game is starting...");
-            
+
             do
             {
                 newCard = random.Next(1, 12);
                 totalPlayer += newCard;
-                Console.WriteLine("");
-                Console.WriteLine("Take your card");
+                Console.WriteLine("\n" + "Take your card");
                 Console.WriteLine($"You got a {newCard}");
                 Console.WriteLine($"Your total is {totalPlayer} \n");
 
@@ -49,8 +47,7 @@ while (true)
             if (message == "Player busts! Dealer wins!") break;
 
             totalDealer = random.Next(14, 23);
-            Console.WriteLine("");
-            Console.WriteLine($"The Dealer have {totalDealer}!");
+            Console.WriteLine("\n" + $"The Dealer have {totalDealer}!");
 
 
             if (totalDealer > 21)
@@ -77,10 +74,11 @@ while (true)
             }
             break;
         default:
-            Console.WriteLine("Invalid option, please try again.");
+            Console.WriteLine("\n" + "Invalid option, please try again.");
+            switchControl = "menu";
             break;
     }
 
-    
+
 
 }
